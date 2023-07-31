@@ -6,8 +6,9 @@ import Image from "../components/Image/Image";
 export default function IndexPage() {
   const [places,setPlaces] = useState([]);
   useEffect(() => {
-    axios.get('/places').then(response => {
-      setPlaces(response.data);
+    axios.get('/places').then(({data}) => {
+      setPlaces(data);
+      console.log(data)
     });
   }, []);
   return (
